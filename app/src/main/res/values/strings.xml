@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SavingsManager</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Add Savings Item screen -->
+    <string name="screen_title_add_savings_item">Add a savings item</string>
+    <string name="bank_name">Bank:</string>
+    <string name="start_date">Start Date:</string>
+    <string name="end_date">End Date:</string>
+    <string name="amount">Amount:</string>
+    <string name="annualized_yield">Annualized Yield(%):</string>
+    <string name="expected_interest">Expected Interest:</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="missing_savings_information">Missing information of this savings item</string>
+
+    <string name="formatted_yield">%1$.2f%%</string>
+
+    <!-- Notifications -->
+    <string name="notification_due_savings_title">You got due savings item on %1$s!</string>
+    <string name="notification_due_savings_message">Cheers, tap to see how much richer you are!</string>
+</resources>

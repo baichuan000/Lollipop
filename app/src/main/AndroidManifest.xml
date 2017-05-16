@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eric.savingsmanager">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activities.DashBoardActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.AddSavingsItemActivity"
+            android:label="@string/screen_title_add_savings_item"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"></activity>
+
+        <provider
+            android:name=".data.SavingsContentProvider"
+            android:authorities="com.eric.savingsmanager.provider"
+            android:enabled="true"
+            android:exported="false"/>
+
+        <receiver
+            android:name=".receivers.SavingsManagerReceivers"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.eric.savingsmanager.action.DUE_SAVINGS_ITEM_ALARM"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
