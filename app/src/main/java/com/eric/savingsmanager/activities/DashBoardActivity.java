@@ -33,6 +33,8 @@ public class DashBoardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ListView mLv_savings;
+    private TextView mTotal_Earningss;
+    private float totalEarnings;
     private Myadpter mMyadpter;
     ArrayList<SavingsBean> mSavingsBeanList = new ArrayList<>();
 //    private ProgressBar mProgressBar;
@@ -44,6 +46,8 @@ public class DashBoardActivity extends AppCompatActivity
         setContentView(R.layout.activity_dash_board);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mTotal_Earningss = (TextView)findViewById(R.id.txt_total_earnings);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +82,7 @@ public class DashBoardActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
         initData();
+        mTotal_Earningss.setText("Total Earnings: " + totalEarnings);
     }
 
 
@@ -87,18 +92,10 @@ public class DashBoardActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_dashBoard) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_AddItem) {
+           startAddSavingsItemScreen();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -129,6 +126,7 @@ public class DashBoardActivity extends AppCompatActivity
         if(mSavingsBeanList !=null){
             mSavingsBeanList.clear();
         }
+        totalEarnings = (float) 0.0;
         Cursor cursor = getContentResolver().query(SavingsContentProvider.CONTENT_URI, null, null, null, "_id asc", null);
         while(cursor.moveToNext()){
             SavingsBean savingsBean = new SavingsBean();
@@ -139,6 +137,7 @@ public class DashBoardActivity extends AppCompatActivity
             float amount = cursor.getFloat(cursor.getColumnIndex(SavingsItemEntry.COLUMN_NAME_AMOUNT));
             float yield = cursor.getFloat(cursor.getColumnIndex(SavingsItemEntry.COLUMN_NAME_YIELD));
             float interest = cursor.getFloat(cursor.getColumnIndex(SavingsItemEntry.COLUMN_NAME_INTEREST));
+            totalEarnings = totalEarnings + interest;
             savingsBean.setId(id);
             savingsBean.setBankName(bankName);
             savingsBean.setStartDate(startDate);
