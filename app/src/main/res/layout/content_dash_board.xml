@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.eric.savingsmanager.activities.DashBoardActivity"
+    tools:showIn="@layout/app_bar_dash_board">
+
+    <TextView
+        android:id="@+id/txt_total_earnings"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/bank_name"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_medium" />
+
+    <ListView
+        android:id="@+id/lv_savings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#FFBBFF"
+        android:dividerHeight="1px" >
+    </ListView>
+
+
+</LinearLayout>

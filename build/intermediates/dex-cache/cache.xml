@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/bcc/Desktop/Lollipop-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7ef10d2bd5f084b8c1efd40f401240a3d273d7b0">
+        <dex dex="/Users/bcc/Desktop/Lollipop-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_30f2ba1a65a5ea1ea6ab6b6a6a3ad7fa6d46bc4a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/bcc/Desktop/Lollipop-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/bcc/Desktop/Lollipop-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9d139a1a1b69a698424c59c26fa0f7ae1d1bbd02/classes.dex" />
+    </item>
+
+</items>
